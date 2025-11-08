@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp Five：年度知识洞察</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #f7f9fc;
+        }
+        .ip-gradient {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); 
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .glow-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+        }
+        .glow-button:hover {
+            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.6);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-4xl w-full bg-white rounded-xl card-shadow overflow-hidden p-6 md:p-10">
+
+        <header class="text-center mb-10">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-2">
+                <span class="ip-gradient bg-clip-text text-transparent">Lamp</span> Five
+            </h1>
+            <p class="text-xl text-gray-600 mb-4">点燃好奇，照亮真相。</p> 
+        </header>
+
+        <section class="grid md:grid-cols-2 gap-8 mb-10">
+            <div class="bg-gray-50 p-6 rounded-xl border-2 border-green-400">
+                <h2 class="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+                    <span class="mr-2 text-green-500"></span> 简单模式 (Simple)
+                </h2>
+                <p class="text-gray-600 mb-4">
+                    包含年度网络梗、流行文化和大众科技常识。
+                </p>
+                <ul class="text-sm text-gray-700 list-disc pl-5 mb-6 space-y-1">
+                    <li>最高 Point： 800 Point</li>
+                    <li>奖励： Point 可在 Lamp Store 兑换虚拟商品</li>
+                    <li>门槛： 面向所有用户</li>
+                </ul>
+                <a href="#" class="w-full inline-block text-center py-3 rounded-lg ip-gradient text-white font-bold glow-button">
+                    立即参与 Lamp Five 挑战 (800 P)
+                </a>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border-2 border-red-400">
+                <h2 class="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+                    <span class="mr-2 text-red-500"></span> 专业模式 (Pro)
+                </h2>
+                <p class="text-gray-600 mb-4">
+                    涵盖生物化学、AI 伦理等 30+ 领域，难度 16+。
+                </p>
+                <ul class="text-sm text-gray-700 list-disc pl-5 mb-6 space-y-1">
+                    <li>最高 Point： 1200 Point</li>
+                    <li>奖励： 未来开放现金与加密货币奖励</li>
+                    <li>门槛： 需 Lamp Mail 认证，目前暂不开放</li>
+                </ul>
+                <div class="w-full inline-block text-center py-3 rounded-lg bg-gray-300 text-gray-700 font-bold cursor-not-allowed">
+                    专业模式：预计2026 年开放 (敬请期待)
+                </div>
+            </div>
+        </section>
+        
+        <section class="mt-10 pt-8 border-t border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-800 mb-3">
+                Lamp Mail 邀请
+            </h2>
+            <p class="text-gray-600 mb-4">
+                成为 Lamp 生态系统的首批邮箱用户。预注册 Lamp Mail 专属邮箱，锁定未来专业模式和 LampVPN 特权。
+            </p>
+
+            <form action="#" onsubmit="handlePreRegister(event)" class="space-y-4 max-w-lg">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">邮箱地址 (用于接收邀请)</label>
+                    <input type="email" id="email" required placeholder="yourname@example.com" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-amber-500 focus:border-amber-500">
+                </div>
+                <button type="submit" class="w-full py-3 rounded-lg ip-gradient text-white font-bold glow-button">
+                    预注册 Lamp Mail
+                </button>
+            </form>
+            <p class="text-xs text-gray-400 mt-2">
+                Lamp Mail 是你进入 LampVPN, LampGames 等 Lamp 生态服务的通行证。
+            </p>
+        </section>
+
+    </div>
+
+    <script>
+        function handlePreRegister(event) {
+            event.preventDefault(); 
+            
+            const form = event.target;
+            const button = form.querySelector('button[type="submit"]');
+            
+            button.textContent = '已提交预注册，请查收邮件！';
+            button.disabled = true;
+            
+            button.classList.add('bg-gray-400');
+            button.classList.remove('ip-gradient', 'glow-button');
+            
+            console.log('Lamp Mail 预注册提交成功。');
+
+        }
+    </script>
+</body>
+</html>
